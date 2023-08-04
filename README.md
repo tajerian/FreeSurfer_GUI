@@ -29,7 +29,7 @@ Now that you have installed all the requirements, you can run the application. U
 
 ```bash
 cd FreeSurfer_GUI
-python main.py
+python3 main.py
 ```
 ## Interface
 <br>
