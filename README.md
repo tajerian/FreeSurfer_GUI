@@ -5,7 +5,7 @@
 </div>
 
 
-## Installation Requirements
+## Requirements Installation
 Make sure you have Python installed on your system. You can download the latest version of Python from the official website: Python Downloads.
 This GUI is built using Tkinter, so before proceeding, please ensure that you have Tkinter installed.
 Tkinter is a standard GUI (Graphical User Interface) library for Python. It is usually included with the Python installation, so most of the time, you won't need to install it separately. However, if you encounter any issues or if Tkinter is not available on your system, follow these steps:
