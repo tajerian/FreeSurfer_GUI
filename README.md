@@ -17,6 +17,7 @@ Tkinter and costumtkinter can be installed using the following command in the te
 sudo apt-get update
 sudo apt-get install python3-tk
 pip install customtkinter
+pip install pillow
 ```
 ## Download project
 To download the FreeSurfer_GUI project, you can use the following steps in the terminal:
