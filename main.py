@@ -2752,7 +2752,7 @@ class BASESubject(customtkinter.CTk):
         out = ''.join(out)[:-2]
         app.displayBASESubjectPath.delete("0.0", "200.0")
         app.displayBASESubjectPath.insert("0.0", out)
-        SegSubject.destroy(self)
+        BASESubject.destroy(self)
 
 if __name__ == "__main__":
     app = App()
