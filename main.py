@@ -574,7 +574,7 @@ class App(customtkinter.CTk):
         self.ParsMeas.grid(row=0, column=1, columnspan=1, padx=10, pady=5, sticky="snew")
         self.ParsHemiLabel = ctk.CTkLabel(self.ParsCommand,text="Hemisphere:")
         self.ParsHemiLabel.grid(row=0, column=2, columnspan=1, padx=10, pady=5, sticky="snew")
-        self.ParsHemi = ctk.CTkOptionMenu(self.ParsCommand, values=[ "left", "right",]) 
+        self.ParsHemi = ctk.CTkOptionMenu(self.ParsCommand, values=[ "Left", "Right",]) 
         self.ParsHemi.grid(row=0, column=3, padx=3, pady=5, sticky="snew")
 
         self.ParsStatButton = ctk.CTkButton(self.ParsCommand, text="Create Stats",
