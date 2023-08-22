@@ -2671,25 +2671,26 @@ class SegSubject(customtkinter.CTk):
             if os.path.isdir(d):
                 self.subjects.append(i)
         self.subnum = len(self.subjects)
-        rows, residual = divmod(self.subnum,5)
+        colnum = 5 if self.subnum<60 else 10
+        rows, residual = divmod(self.subnum,colnum)
         geo = []
         for i in range(rows):
-            for j in range(5):
+            for j in range(colnum):
                 geo.append([i,j])
         for i in range(residual):
             geo.append([rows,i])
-        width = int(len(''.join(self.subjects))/rows*15)
+        width = int(len(''.join(self.subjects))/rows*colnum*3)
         height = 100 + (rows+1)*50
         # Sets the dimensions of the window to 600x700
         self.geometry(f"{width}x{height}")   
 
         for i, j in geo:
-            exec(f'self.Subject{i*5+j} = ctk.CTkCheckBox(self,text="{self.subjects[i*5+j]}", offvalue="",onvalue="{self.subjects[i*5+j]}")')
-            exec(f'self.Subject{i*5+j}.grid(row={i}, column={j}, padx=5, pady=5, sticky="snew")')
+            exec(f'self.Subject{i*colnum+j} = ctk.CTkCheckBox(self,text="{self.subjects[i*colnum+j]}", offvalue="",onvalue="{self.subjects[i*colnum+j]}")')
+            exec(f'self.Subject{i*colnum+j}.grid(row={i}, column={j}, padx=5, pady=5, sticky="snew")')
         self.SelectButton = ctk.CTkButton(self, text="Select Subjects",
                                 command=self.select, fg_color= '#d03b3b', hover_color='#9f3636')
-        self.SelectButton.grid(row=rows+1, column=0, columnspan = 5, padx=150, pady=20, sticky="snew")
-        self.grid_columnconfigure((0,1,2,3,4), weight=1)
+        self.SelectButton.grid(row=rows+1, column=0, columnspan = colnum, padx=150, pady=20, sticky="snew")
+        self.grid_columnconfigure(list(range(colnum)), weight=1)
         self.grid_rowconfigure([i for i in range(rows+2)], weight=1)
     def select(self):
         sub = []
@@ -2718,25 +2719,26 @@ class BASESubject(customtkinter.CTk):
             if os.path.isdir(d):
                 self.subjects.append(i)
         self.subnum = len(self.subjects)
-        rows, residual = divmod(self.subnum,5)
+        colnum = 5 if self.subnum<60 else 10
+        rows, residual = divmod(self.subnum,colnum)
         geo = []
         for i in range(rows):
-            for j in range(5):
+            for j in range(colnum):
                 geo.append([i,j])
         for i in range(residual):
             geo.append([rows,i])
-        width = int(len(''.join(self.subjects))/rows*15)
+        width = int(len(''.join(self.subjects))/rows*colnum*3)
         height = 100 + (rows+1)*50
         # Sets the dimensions of the window to 600x700
         self.geometry(f"{width}x{height}")   
 
         for i, j in geo:
-            exec(f'self.Subject{i*5+j} = ctk.CTkCheckBox(self,text="{self.subjects[i*5+j]}", offvalue="",onvalue="{self.subjects[i*5+j]}")')
-            exec(f'self.Subject{i*5+j}.grid(row={i}, column={j}, padx=5, pady=5, sticky="snew")')
+            exec(f'self.Subject{i*colnum+j} = ctk.CTkCheckBox(self,text="{self.subjects[i*colnum+j]}", offvalue="",onvalue="{self.subjects[i*colnum+j]}")')
+            exec(f'self.Subject{i*colnum+j}.grid(row={i}, column={j}, padx=5, pady=5, sticky="snew")')
         self.SelectButton = ctk.CTkButton(self, text="Select Subjects",
                                 command=self.select, fg_color= '#d03b3b', hover_color='#9f3636')
-        self.SelectButton.grid(row=rows+1, column=0, columnspan = 5, padx=150, pady=20, sticky="snew")
-        self.grid_columnconfigure((0,1,2,3,4), weight=1)
+        self.SelectButton.grid(row=rows+1, column=0, columnspan = colnum, padx=150, pady=20, sticky="snew")
+        self.grid_columnconfigure(list range(colnum), weight=1)
         self.grid_rowconfigure([i for i in range(rows+2)], weight=1)
     def select(self):
         sub = []
