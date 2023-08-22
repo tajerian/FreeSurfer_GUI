@@ -2738,7 +2738,7 @@ class BASESubject(customtkinter.CTk):
         self.SelectButton = ctk.CTkButton(self, text="Select Subjects",
                                 command=self.select, fg_color= '#d03b3b', hover_color='#9f3636')
         self.SelectButton.grid(row=rows+1, column=0, columnspan = colnum, padx=150, pady=20, sticky="snew")
-        self.grid_columnconfigure(list range(colnum), weight=1)
+        self.grid_columnconfigure(list(range(colnum)), weight=1)
         self.grid_rowconfigure([i for i in range(rows+2)], weight=1)
     def select(self):
         sub = []
